@@ -1,0 +1,14 @@
+#!/bin/bash
+
+md5v1="625e5644a0b87b8d81fbfc1687db0252"
+cat piece/jdk.* > jdk-8u211-macosx-x64.dmg
+
+md5v2=`md5sum jdk-8u211-macosx-x64.dmg`
+md5v2=${md5v2%% *}
+if ! [ "$md5v1" = "$md5v2" ];then
+  echo "$md5v1"
+  echo "$md5v2"
+  echo "check md5 error"
+else
+  echo "done"
+fi

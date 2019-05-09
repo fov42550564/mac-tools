@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm -fr piece
+mkdir piece
+split -b 31457280 ./jdk-8u211-macosx-x64.dmg piece/jdk.
